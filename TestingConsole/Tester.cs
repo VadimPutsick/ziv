@@ -51,21 +51,36 @@ namespace TestingConsole
 
             const int POSSIBLE_LENGTH = 6000;
             const int LIMIT_ON_CUTS = 6;
-            List<CommonInfo> commonInfo = new List<CommonInfo>(desired.Count);
-
+            List<CommonInfo> commonInfoList = new List<CommonInfo>(desired.Count);  
             for (var i = 0; i < desired.Count; i++)
             {
-                commonInfo.Add(new CommonInfo(names[i], desired[i], counts[i]));
-                Console.WriteLine(new CommonInfo(names[i], desired[i], counts[i]));
+                commonInfoList.Add(new CommonInfo(names[i], desired[i], counts[i]));                
             }
+            
+            #region Агрегация материалов с одинаковым Width
+            var elementsCount = commonInfoList.Select(x => x.Width).Distinct();
+            var resultList = new List<CommonInfo>();
+
+            foreach (var item in elementsCount)
+            {
+                var tmp = commonInfoList.Where(x => x.Width == item);
+                resultList.Add(tmp.Aggregate((prev, next) => {
+                    prev.Name += ", " + next.Name;
+                    prev.Count += next.Count;
+                    return prev;
+                }));
+            }
+            #endregion
 
             Solver solver = new Solver();
-            List<Plank> planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, commonInfo);
-
-            foreach (var plank in planks)
+            List<Plank> planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, resultList);
+{
+                foreach (var plank in planks)
             {
                 Console.WriteLine(plank);
             }
+            }
+
             Console.ReadKey(true);
         }
     }
