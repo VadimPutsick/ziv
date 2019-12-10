@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingConsole", "TestingCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuttingTask", "CuttingTask\CuttingTask.csproj", "{DC23AFEB-98A4-4EC6-A987-1D4A7EEC98B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelExporter", "ExcelExporter\ExcelExporter.csproj", "{6466D276-A20C-4FA6-A983-38229BDC1C2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{DC23AFEB-98A4-4EC6-A987-1D4A7EEC98B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC23AFEB-98A4-4EC6-A987-1D4A7EEC98B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC23AFEB-98A4-4EC6-A987-1D4A7EEC98B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6466D276-A20C-4FA6-A983-38229BDC1C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6466D276-A20C-4FA6-A983-38229BDC1C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6466D276-A20C-4FA6-A983-38229BDC1C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6466D276-A20C-4FA6-A983-38229BDC1C2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
