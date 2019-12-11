@@ -31,7 +31,7 @@ namespace ExcelExporter
             worksheet.Cells[2, 5] = "Было";
             worksheet.Cells[2, 5] = "Сколько изготовить";
             worksheet.Cells[2, 5] = "Отходы";
-            worksheet.Cells[2, 5] = "В процентах";
+            worksheet.Cells[2, 5] = "Было";
             worksheet.Cells[2, 6] = "Сколько раз нужно изготовить";
             worksheet.Cells[2, 7] = "Отходы";
             var startFromRow = 3;
@@ -64,8 +64,7 @@ namespace ExcelExporter
                 //((Style)((Range)worksheet.Cells[startFromRow, 7]).Style).HorizontalAlignment =
                 //    XlHAlign.xlHAlignCenter;
                 worksheet.Cells[startFromRow, 6] = plank.HowMany;
-                worksheet.Cells[startFromRow, 7] = plank.FreeLength;
-                
+                worksheet.Cells[startFromRow, 7] = plank.GetWasteInPersents() + " %";              
 
 
 
