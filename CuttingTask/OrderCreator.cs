@@ -12,7 +12,7 @@ namespace CuttingTask
         private const double MAX_WASTE = 4;
         private const int ORDER_COUNT = 6;
         private List<Order> orders = new List<Order>();
-        public List<Order> createOrder(List<CommonInfo> commonInfos) 
+        public List<Order> CreateOrder(List<CommonInfo> commonInfos) 
         {
 
             bool hasMembraneToCut = true;
@@ -61,7 +61,7 @@ namespace CuttingTask
                 orders.Add(new Order(commonInfoForOrder, waste));
             }
             orders.Add(new Order(commonInfos, 100.00));
-            return new List<Order>();
+            return orders;
         }
 
     }
