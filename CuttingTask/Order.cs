@@ -10,25 +10,27 @@ namespace CuttingTask
     {
         const int ITEMS_LIMIT = 6;
         private List<CommonInfo> _commonInfos = new List<CommonInfo>();
-        private decimal performedCount = 0;
-        public Order(List<CommonInfo> commonInfos) 
+        public decimal RollCount { get; private set; }
+        public double Waste { get; private set; }
+        public Order(List<CommonInfo> commonInfos, double waste) 
         {
-            
-            performedCount = commonInfos.Select(item => item.Count).Min();
-            //Console.WriteLine("-------------");
-            //Console.WriteLine(performedCount);
-            //Array.ForEach(commonInfos.ToArray(), Console.WriteLine);
-            //Console.WriteLine();
+            Waste = waste;
+            RollCount = commonInfos.Select(item => item.Count).Min();
             foreach (CommonInfo commonInfo in commonInfos) 
             {
                 _commonInfos.Add(commonInfo.clone());
-                commonInfo.Count = commonInfo.Count - performedCount;
+                commonInfo.Count = commonInfo.Count - RollCount;
             }
-            //Console.WriteLine("-------------");
-            //Console.WriteLine("-------------");
             Array.ForEach(_commonInfos.ToArray(), Console.WriteLine);
+            Console.WriteLine();
+            Console.WriteLine("Waste:" + waste);
+            Console.WriteLine("Roll quantity: " + RollCount);
             Console.WriteLine("-------------");
 
+        }
+
+        public List<CommonInfo> getOrder() {
+            return _commonInfos;
         }
     }
 }

@@ -43,7 +43,7 @@ namespace CuttingTask
 
         public override string ToString()
         {
-            return " Width: " + _width + " Count " + _count + " Sleeve " + _sleeve;
+            return " Width: " + _width + " Count " + _count;
         }
 
         public CommonInfo clone() {

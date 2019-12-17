@@ -44,8 +44,6 @@ namespace TestingConsole
 
             #endregion
 
-            const int POSSIBLE_LENGTH = 6000;
-            const int LIMIT_ON_CUTS = 6;
             var commonInfoList = desired.Select((t, i) => new CommonInfo(names[i], t, counts[i])).ToList();
 
             #region Агрегация материалов с одинаковым Width
@@ -63,9 +61,8 @@ namespace TestingConsole
                     return prev;
                 }));
             }
-
             #endregion
-            Console.WriteLine("sdfsdfsdf");
+
             OrderCreator orderCreator = new OrderCreator();
             orderCreator.createOrder(resultList);
             //var solver = new Solver();

@@ -47,7 +47,6 @@
     <Compile Include="OrderCreator.cs" />
     <Compile Include="Plank.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Solver.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

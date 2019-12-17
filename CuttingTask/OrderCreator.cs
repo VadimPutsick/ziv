@@ -53,14 +53,14 @@ namespace CuttingTask
                     }
                     else
                     {
-                        return null;
+                        hasMembraneToCut = false;
+                        break;
                     } 
                     waste = (1 - commonInfoForOrder.Sum(x => x.Width) / MAX_WIDTH) * 100;
                 }
-                orders.Add(new Order(commonInfoForOrder));
-                hasMembraneToCut = commonInfos.First().Count > 0;
+                orders.Add(new Order(commonInfoForOrder, waste));
             }
-            Array.ForEach(commonInfos.ToArray(), Console.WriteLine);
+            orders.Add(new Order(commonInfos, 100.00));
             return new List<Order>();
         }
 

@@ -64,7 +64,7 @@ namespace ExcelExporter
                 //((Style)((Range)worksheet.Cells[startFromRow, 7]).Style).HorizontalAlignment =
                 //    XlHAlign.xlHAlignCenter;
                 worksheet.Cells[startFromRow, 6] = plank.HowMany;
-                worksheet.Cells[startFromRow, 7] = plank.GetWasteInPersents() + " %";              
+                worksheet.Cells[startFromRow, 7] = plank.GetWasteInPersents();              
 
 
 
