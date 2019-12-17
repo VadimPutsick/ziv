@@ -65,16 +65,17 @@ namespace TestingConsole
             }
 
             #endregion
+            Console.WriteLine("sdfsdfsdf");
+            OrderCreator orderCreator = new OrderCreator();
+            orderCreator.createOrder(resultList);
+            //var solver = new Solver();
+            //var planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, resultList);
 
-            var solver = new Solver();
-            var planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, resultList);
-            {
-                foreach (var plank in planks) Console.WriteLine(plank);
-            }
+            //Array.ForEach(planks.ToArray(), Console.WriteLine);
 
-            var exporter = new Exporter(@"result.xlsx");
+            //var exporter = new Exporter(@"result.xlsx");
 
-            exporter.WriteFile(planks);
+            //exporter.WriteFile(planks);
 
             Console.ReadKey(true);
         }

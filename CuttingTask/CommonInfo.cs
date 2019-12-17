@@ -20,7 +20,7 @@ namespace CuttingTask
         public decimal Count
         {
             get { return _count; }
-            set { if (value <= 0) throw new Exception("Количество не должно быть отрицательным или нулевым"); else _count = value; }
+            set {  _count = value; }
         }
         public int Width
         {
@@ -43,7 +43,7 @@ namespace CuttingTask
 
         public override string ToString()
         {
-            return "Name: " + _name + " Width: " + _width + " Count " + _count + " Sleeve " + _sleeve;
+            return " Width: " + _width + " Count " + _count + " Sleeve " + _sleeve;
         }
 
         public CommonInfo clone() {
