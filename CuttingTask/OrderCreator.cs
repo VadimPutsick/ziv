@@ -58,7 +58,10 @@ namespace CuttingTask
                     } 
                     waste = (1 - commonInfoForOrder.Sum(x => x.Width) / MAX_WIDTH) * 100;
                 }
-                orders.Add(new Order(commonInfoForOrder, waste));
+                if (hasMembraneToCut) 
+                { 
+                    orders.Add(new Order(commonInfoForOrder, waste));
+                }                
             }
             orders.Add(new Order(commonInfos, 100.00));
             return orders;
