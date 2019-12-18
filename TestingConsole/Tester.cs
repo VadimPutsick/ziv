@@ -66,17 +66,9 @@ namespace TestingConsole
             OrderCreator orderCreator = new OrderCreator();
             var result = orderCreator.CreateOrder(resultList);
             var exporter = new Exporter(@"result.xlxs");
-            exporter.WriteFile(result);
-            //var solver = new Solver();
-            //var planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, resultList);
+            exporter.WriteFile(result);    
 
-            //Array.ForEach(planks.ToArray(), Console.WriteLine);
-
-            //var exporter = new Exporter(@"result.xlsx");
-
-            //exporter.WriteFile(planks);
-
-            Console.ReadKey(true);
+            //Console.ReadKey(true);
         }
     }
 }
