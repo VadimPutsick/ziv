@@ -64,7 +64,9 @@ namespace TestingConsole
             #endregion
 
             OrderCreator orderCreator = new OrderCreator();
-            orderCreator.createOrder(resultList);
+            var result = orderCreator.CreateOrder(resultList);
+            var exporter = new Exporter(@"result.xlxs");
+            exporter.WriteFile(result);
             //var solver = new Solver();
             //var planks = solver.CalculateCuts(POSSIBLE_LENGTH, LIMIT_ON_CUTS, resultList);
 
